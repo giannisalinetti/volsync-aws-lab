@@ -1,0 +1,15 @@
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationSource
+metadata:
+  name: app-volume-src
+  namespace: volsync-lab-src
+spec:
+  sourcePVC: mysql-pv-claim
+  trigger:
+    schedule: "*/5 * * * *"
+  rsync:
+    sshKeys: volsync-rsync-dest-src-app-volume-dest
+    address: a6283c0f670024bdb8bc163044ca5849-08e94d7787ef24fd.elb.eu-central-1.amazonaws.com
+    copyMethod: Snapshot
+

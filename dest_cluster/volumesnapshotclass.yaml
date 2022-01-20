@@ -1,0 +1,7 @@
+apiVersion: snapshot.storage.k8s.io/v1beta1
+kind: VolumeSnapshotClass
+metadata:
+  name: gp2-csi
+driver: ebs.csi.aws.com
+deletionPolicy: Delete
+

@@ -1,0 +1,14 @@
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  name: app-volume-dest
+  namespace: volsync-lab-dst
+spec:
+  rsync:
+    serviceType: LoadBalancer
+    copyMethod: Snapshot
+    capacity: 10Gi
+    accessModes: ["ReadWriteOnce"]
+    sshKeys: volsync-rsync-dest-dest-app-volume-dest
+
